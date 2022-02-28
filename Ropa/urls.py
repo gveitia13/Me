@@ -19,9 +19,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 from Ropa import settings
+from apk.views import Index
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('', Index, name='index'),
     path('', include('apk.urls')),
 ]
 if settings.DEBUG:

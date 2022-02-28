@@ -1,14 +1,10 @@
-import os
-
 from crum import get_current_user
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator
 from django.db import models
-
-# Create your models here.
+from django.conf.locale.es import formats as es_formats
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-
-from Ropa.settings import BASE_DIR
 
 
 class Product(models.Model):
@@ -21,15 +17,22 @@ class Product(models.Model):
         ('aseo', 'aseo'),
         ('otro', 'otro'),
     ))
-    date_creation = models.DateField(auto_now_add=True, verbose_name='Fecha de comprado', blank=True, null=True)
-    description = models.CharField(max_length=222, verbose_name='Decripcion', blank=True, null=True)
+    cost = models.DecimalField(max_digits=9, decimal_places=1, verbose_name='Costo CUP', blank=True, null=True,
+                               default=0.0,
+                               validators=[MinValueValidator(0, message='Escriba un numero positivo'), ])
+    cost_usd = models.DecimalField(max_digits=9, decimal_places=1, verbose_name='Costo USD', blank=True, null=True,
+                                   default=0.0,
+                                   validators=[MinValueValidator(0, message='Escriba un numero positivo'), ])
+    date_creation = models.DateField(auto_now_add=True, verbose_name='Fecha', blank=True, null=True)
+    quantify = models.PositiveSmallIntegerField(default=1, verbose_name='Cantidad', null=True, blank=True)
+    description = models.CharField(max_length=222, verbose_name='Descripción', blank=True, null=True)
 
     def __str__(self):
         return self.type + f' {self.description}' if self.description else ''
 
     class Meta:
         verbose_name = 'Producto'
-        ordering = ['date_creation']
+        ordering = ['date_creation', 'type', 'description']
 
     def save(self, raw=False, force_insert=False,
              force_update=False, using=None, update_fields=None):
@@ -60,10 +63,18 @@ class Clothing(models.Model):
 
     def img_tag(self):
         if self.img:
-            return format_html(f'<img src="{self.img.url}" width="60" height="60" />')
+            return format_html(f'<img src="{self.img.url}" class="circular agrandar" width="45" height="45" />')
         return 'No image'
 
-    img_tag.short_description = 'Imagen'
+    img_tag.short_description = 'Vista previa'
+
+    def wash_tag(self):
+        # return mark_safe(f'<button name="_wash" id="ropa{self.id}" class="btn btn-success">lavar</button>')
+        return mark_safe('<form action="/admin/apk/clothing/" method="post">\
+                         <input type="submit" value="Lavar" name="_wash" class="btn btn-success">\
+                         </form>')
+
+    wash_tag.short_description = 'Opciones'
 
     def save(self, raw=False, force_insert=False,
              force_update=False, using=None, update_fields=None):

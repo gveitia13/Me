@@ -52,7 +52,7 @@ JAZZMIN_SETTINGS = {
         # 'apk.clothing': 'fas fa-socks',
         'apk.clothing': 'fas fa-tshirt',
     },
-    # "custom_css": 'css/mystyle.css',
+    "custom_css": 'css/mystyle.css',
     # "custom_js": 'hola.js',
     "topmenu_links": [
         # Url that gets reversed (Permissions can be added)

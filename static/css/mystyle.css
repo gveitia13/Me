@@ -128,13 +128,12 @@ button.buttons-html5 {
 
 /*Pastillas circulares*/
 
-.circular-left,
-span.select2-selection {
+.circular-left{
     border-top-left-radius: 1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
 }
 
-.circular-right {
+.circular-right{
     border-top-right-radius: 1.5rem !important;
     border-bottom-right-radius: 1.5rem !important;
 }
@@ -150,11 +149,8 @@ span.select2-selection {
 }
 
 .circular,
-input[type='search'],
 .dropdown-menu,
 .daterangepicker,
-span.select2-dropdown,
-li.select2-results__option,
 div.calendar-table table.table-condensed tbody tr td,
 div.bs-searchbox > *,
 div.jconfirm-box {
@@ -436,4 +432,15 @@ input.task-add {
 
 .truncate-3 {
     -webkit-line-clamp: 1;
+}
+/*cosas de aki nuevas xd*/
+.agrandar:hover {
+    transform: scale(1.5);
+    transition-duration: 0.5s;
+}
+
+.agrandar {
+    border-radius: 0.2rem;
+    /*border: .5mm solid  darkslategrey;*/
+    /*background-clip: border-box;*/
 }
