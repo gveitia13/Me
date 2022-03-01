@@ -7,7 +7,7 @@ from django.utils.safestring import mark_safe
 from phone_field import PhoneField
 
 
-class Product(models.Model):
+class Spending(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     type = models.CharField(max_length=50, verbose_name='Tipo', choices=(
         ('cigarro', 'cigarro'),
@@ -38,7 +38,7 @@ class Product(models.Model):
              force_update=False, using=None, update_fields=None):
         user = get_current_user()
         self.user = user
-        super(Product, self).save()
+        super(Spending, self).save()
 
 
 class Category(models.Model):

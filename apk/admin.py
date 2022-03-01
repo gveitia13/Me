@@ -19,7 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
     inlines = [ClothingInline]
 
 
-class ProductAdmin(admin.ModelAdmin):
+class SpendingAdmin(admin.ModelAdmin):
     list_display = ('type', 'description', 'cost', 'cost_usd', 'quantify', 'date_creation',)
     form = ProductForm
     list_filter = ('type',)
@@ -57,5 +57,5 @@ class ClothingAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Product, ProductAdmin)
+admin.site.register(Spending, SpendingAdmin)
 admin.site.register(Clothing, ClothingAdmin)

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rangefilter',
     'apk',
     'debt',
+    'sale',
 ]
 
 JAZZMIN_SETTINGS = {
@@ -51,7 +52,7 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user-tie",
         "auth.Group": "fas fa-users",
         'apk.category': 'fas fa-shapes',
-        'apk.product': 'fab fa-product-hunt',
+        'apk.spending': 'fas fa-shopping-bag',
         'apk.clothing': 'fas fa-tshirt',
         'debt.client': 'fas fa-user-tag',
         'debt.debt': 'fas fa-file-invoice-dollar',
