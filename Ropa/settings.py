@@ -48,11 +48,13 @@ JAZZMIN_SETTINGS = {
     'site_header': 'Techno$tar',
 
     "icons": {
-        "auth.user": "fas fa-user",
+        "auth.user": "fas fa-user-tie",
         "auth.Group": "fas fa-users",
         'apk.category': 'fas fa-shapes',
         'apk.product': 'fab fa-product-hunt',
         'apk.clothing': 'fas fa-tshirt',
+        'debt.client': 'fas fa-user-tag',
+        'debt.debt': 'fas fa-file-invoice-dollar',
     },
     "custom_css": 'css/mystyle.css',
     "custom_js": 'js/function.js',

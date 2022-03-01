@@ -23,7 +23,9 @@ class Client(models.Model):
     def get_debts(self):
         debts = ''
         for d in Debt.objects.filter(client=self):
-            debts += f'<a href="/admin/debt/debt/{d.id}/change/"> <span class="badge badge-success circular">{d.description}</span></a> '
+            debts += f'<a href="/admin/debt/debt/{d.id}/change/">' \
+                     f' <span class="badge badge-success circular">' \
+                     f'{d.description}: {d.quantify}</span></a> '
         if debts == '': return mark_safe('<b>No tiene deudas</b>')
         return mark_safe(debts)
 
