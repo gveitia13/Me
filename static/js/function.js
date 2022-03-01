@@ -15,15 +15,21 @@ $(function () {
           location.reload()
         },)
       }))
-/*
-  try {
-    d.querySelector('#jazzy-logo img').src = '/static/img/logo-sm-blue-white.png'
-  } catch (e) {
-    console.log(e)
-  }*/
+  /*
+    try {
+      d.querySelector('#jazzy-logo img').src = '/static/img/logo-sm-blue-white.png'
+    } catch (e) {
+      console.log(e)
+    }*/
   try {
     document.querySelector('div.login-logo').innerHTML =
       '<h2><img src="/static/img/logo-lg-red-black.png" style="width: 230px;height: auto;" alt="EnCAJA Lite"></h2>'
+  } catch (e) {
+    console.log(e)
+  }
+  try {
+    document.querySelector('#search_group').classList.add('d-none')
+    document.querySelector('#search_group').style = 'display:none'
   } catch (e) {
     console.log(e)
   }
