@@ -32,23 +32,23 @@ ul.nav-treeview li.nav-item > a, ul.nav-treeview li.nav-item > a i.nav-icon {
     line-height: 1.5;
 }
 
-*::-webkit-scrollbar {
-    width: 9px;
-}
+/**::-webkit-scrollbar {*/
+/*    width: 9px;*/
+/*}*/
 
-*::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+/**::-webkit-scrollbar-track {*/
+/*    background: #f1f1f1;*/
+/*}*/
 
-*::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #007bff, #73b1f5);
-    border-radius: 5px;
-}
+/**::-webkit-scrollbar-thumb {*/
+/*    background: linear-gradient(to bottom, #007bff, #73b1f5);*/
+/*    border-radius: 5px;*/
+/*}*/
 
-*::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    background: linear-gradient(to bottom, #006ade, #007bff);
-}
+/**::-webkit-scrollbar-thumb:hover {*/
+/*    background: #555;*/
+/*    background: linear-gradient(to bottom, #006ade, #007bff);*/
+/*}*/
 
 .w3-margin-bottom-7 {
     margin-bottom: 7px !important
@@ -128,12 +128,12 @@ button.buttons-html5 {
 
 /*Pastillas circulares*/
 
-.circular-left{
+.circular-left {
     border-top-left-radius: 1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
 }
 
-.circular-right{
+.circular-right {
     border-top-right-radius: 1.5rem !important;
     border-bottom-right-radius: 1.5rem !important;
 }
@@ -169,7 +169,7 @@ a.btn-xs {
     width: 27px;
 }
 
-a.nav-link {
+ul.nav-sidebar > li.nav-item > a.nav-link {
     border-radius: 0 2rem 2rem 0 !important;
 }
 
@@ -433,6 +433,7 @@ input.task-add {
 .truncate-3 {
     -webkit-line-clamp: 1;
 }
+
 /*cosas de aki nuevas xd*/
 .agrandar:hover {
     transform: scale(1.5);

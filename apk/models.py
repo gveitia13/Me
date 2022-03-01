@@ -2,9 +2,9 @@ from crum import get_current_user
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 from django.db import models
-from django.conf.locale.es import formats as es_formats
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+from phone_field import PhoneField
 
 
 class Product(models.Model):
@@ -69,10 +69,8 @@ class Clothing(models.Model):
     img_tag.short_description = 'Vista previa'
 
     def wash_tag(self):
-        # return mark_safe(f'<button name="_wash" id="ropa{self.id}" class="btn btn-success">lavar</button>')
-        return mark_safe('<form action="/admin/apk/clothing/" method="post">\
-                         <input type="submit" value="Lavar" name="_wash" class="btn btn-success">\
-                         </form>')
+        return mark_safe(
+            f'<button name="_wash" type=button id="ropa{self.id}" class="btn circular btn-success">lavar</button>')
 
     wash_tag.short_description = 'Opciones'
 
@@ -85,3 +83,41 @@ class Clothing(models.Model):
     class Meta:
         verbose_name = 'Ropa'
         ordering = ['category', '-cont', 'name']
+
+
+class Debt(models.Model):
+    quantify = models.DecimalField(max_digits=9, decimal_places=1, verbose_name='Cantidad',
+                                   blank=True, null=True, default=0.0,
+                                   validators=[MinValueValidator(0, message='Escriba un numero positivo'), ])
+    date_creation = models.DateField(auto_now_add=True, verbose_name='Fecha', blank=True, null=True)
+    date_to_pay = models.DateField(verbose_name='Dia a pagar', null=True, blank=True)
+    description = models.CharField(max_length=222, verbose_name='Descripción')
+
+    def __str__(self):
+        return self.description
+
+    class Meta:
+        verbose_name = 'Deuda'
+        ordering = ['date_creation', 'quantify']
+        app_label = 'Clientes | Deudas'
+
+
+class Client(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Nombre')
+    phone = PhoneField(blank=True, help_text='Número del celular', verbose_name='Celular')
+    debt = models.ForeignKey(Debt, on_delete=models.CASCADE, verbose_name='Deuda')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
+    def save(self, raw=False, force_insert=False,
+             force_update=False, using=None, update_fields=None):
+        user = get_current_user()
+        self.user = user
+        super(Client, self).save()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Cliente'
+        ordering = ['name']
+        app_label = 'Clientes | Deudas'

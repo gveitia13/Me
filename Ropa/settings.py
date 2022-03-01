@@ -49,11 +49,11 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
         'apk.category': 'fas fa-shapes',
-        # 'apk.clothing': 'fas fa-socks',
+        'apk.product': 'fab fa-product-hunt',
         'apk.clothing': 'fas fa-tshirt',
     },
     "custom_css": 'css/mystyle.css',
-    # "custom_js": 'hola.js',
+    "custom_js": 'js/function.js',
     "topmenu_links": [
         # Url that gets reversed (Permissions can be added)
         {"name": "Inicio", "url": "admin:index"},
