@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class SaleConfig(AppConfig):
+class DebtConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'sale'
-    verbose_name = 'Ventas | Productos'
+    name = 'apps.debt'
+    verbose_name = 'Clientes | Deudas'

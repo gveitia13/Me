@@ -1,6 +1,6 @@
 from django import forms
 
-from apk.models import *
+from apps.apk.models import *
 
 
 class ClothingForm(forms.ModelForm):

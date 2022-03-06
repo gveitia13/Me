@@ -19,6 +19,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (Ropa)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="daisyui" level="application" />
+    <orderEntry type="library" name="tailwindcss" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

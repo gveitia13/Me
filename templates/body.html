@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+    <body class="">
+    <div class="wrapper">
+        <!-- Navbar -->
+        {% include 'navbar.html' %}
+        <!-- Content -->
+        <div class="content-wrapper">
+            {% block content_header %}
+
+            {% endblock %}
+            <div class="content">
+                <div class="container-fluid">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        {% include 'footer.html' %}
+    </div>
+    <!-- Javascript -->
+    {% block javascript %}
+
+    {% endblock %}
+    </body>
+{% endblock %}

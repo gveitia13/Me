@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="icon" href="{% static 'img/logo-sm-red-black.png' %}" type="image/x-icon">
+    <!-- Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.2.2/dist/full.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.2.2/dist/full.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Material icons -->
+    <link rel="stylesheet" href="{% static 'lib/material-icons/css/icons.min.css' %}">
+    <!-- jQuery -->
+    <script src="{% static 'lib/jquery/jquery-3.6.0.min.js' %}"></script>
+    <!-- sweetAlert -->
+    <link rel="stylesheet" href="{% static 'lib/sweetalert2/sweetalert2.min.css' %}">
+    <script src="{% static 'lib/sweetalert2/sweetalert2.all.min.js' %}"></script>
+    <!-- jquery-confirm -->
+    <link rel="stylesheet" href="{% static 'lib/jquery-confirm-v3.3.4/jquery-confirm.min.css' %}">
+    <script src="{% static 'lib/jquery-confirm-v3.3.4/jquery-confirm.min.js' %}"></script>
+    <!-- Functions -->
+    <script src="{% static 'js/function.js' %}"></script>
+    <!-- My css -->
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <!-- Block head -->
+    {% block head %}
+
+    {% endblock %}
+</head>
+{% block body %}
+
+{% endblock %}
+</html>

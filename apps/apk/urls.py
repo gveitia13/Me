@@ -3,7 +3,7 @@ from django.urls import path
 
 from Ropa import settings
 # from apk.views import wash
-from apk.views import Test
+from apps.apk.views import Test
 
 app_name = 'apk'
 urlpatterns = [

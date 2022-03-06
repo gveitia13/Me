@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from sale.forms import *
-from sale.models import *
+from apps.sale.forms import *
+from apps.sale.models import *
 
 
 class ProdCategoryAdmin(admin.ModelAdmin):

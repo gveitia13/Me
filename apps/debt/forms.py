@@ -1,6 +1,6 @@
 from django import forms
 
-from debt.models import Debt, Client
+from apps.debt.models import Debt, Client
 
 
 class DebtForm(forms.ModelForm):

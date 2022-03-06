@@ -36,10 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'rangefilter',
-    'apk',
-    'debt',
-    'sale',
+    'apps.apk',
+    'apps.debt',
+    'apps.sale',
 ]
 
 JAZZMIN_SETTINGS = {
